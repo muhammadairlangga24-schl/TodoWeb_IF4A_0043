@@ -73,9 +73,19 @@ btnEdit.addEventListener("click", function () {
   }
 });
 
+  let btnHapus = document.createElement("button");
+btnHapus.textContent = "Hapus";
+
+btnHapus.classList.add("hapus");
+
+btnHapus.addEventListener("click", function () {
+  listbaru.remove();
+});
+
   listbaru.appendChild(spanbaru);
   listbaru.appendChild(btnDone);
   listbaru.appendChild(btnEdit);
+  listbaru.appendChild(btnHapus);
 
   daftarTugas.appendChild(listbaru);
   spanbaru.style.color = "red";
