@@ -17,21 +17,47 @@ btnTambah.addEventListener("click", function () {
   let spanbaru = document.createElement("span");
 
   spanbaru.innerHTML = `
-  ${teksTugas} - ${tanggalTugas} - ${statusTugas}
-  `;
+  ${teksTugas} - ${tanggalTugas} - 
+  <span class="status">${statusTugas}</span>
+`;
 
-  listbaru.appendChild(spanbaru);
+  let btnDone = document.createElement("button");
+  btnDone.textContent = "Done";
 
-  daftarTugas.appendChild(listbaru);
+  let selesai = false;
 
-  const warnabaru = document.querySelectorAll("li");
-  warnabaru.forEach((item, index) => {
-    if (index % 2 === 0) {
-      item.style.color = "red";
+  btnDone.addEventListener("click", function () {
+    const status = spanbaru.querySelector(".status");
+
+    if (!selesai) {
+      status.textContent = "Done";
+      status.style.color = "green";
+
+      spanbaru.style.textDecoration = "line-through";
+
+      spanbaru.style.color = "green";
+
+      btnDone.textContent = "Undo";
+
+      selesai = true;
     } else {
-      item.style.color = "green";
+      status.textContent = "On Progress";
+      status.style.color = "red";
+
+      spanbaru.style.textDecoration = "none";
+      spanbaru.style.color = "red";
+
+      btnDone.textContent = "Done";
+
+      selesai = false;
     }
   });
+
+  listbaru.appendChild(spanbaru);
+  listbaru.appendChild(btnDone);
+
+  daftarTugas.appendChild(listbaru);
+  spanbaru.style.color = "red";
 
   inputTanggal.value = "";
   inputTugas.value = "";
