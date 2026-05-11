@@ -3,6 +3,11 @@ const btnTambah = document.getElementById("btnTambah");
 const daftarTugas = document.getElementById("daftarTugas");
 const inputTanggal = document.getElementById("inputTanggal");
 const kosong = document.getElementById("kosong");
+const modalEdit = document.getElementById("modalEdit");
+const editTugas = document.getElementById("editTugas");
+const editTanggal = document.getElementById("editTanggal");
+const simpanEdit = document.getElementById("simpanEdit");
+const batalEdit = document.getElementById("batalEdit");
 
 btnTambah.addEventListener("click", function () {
   let teksTugas = inputTugas.value;
@@ -55,15 +60,17 @@ btnTambah.addEventListener("click", function () {
   });
 
   let btnEdit = document.createElement("button");
-btnEdit.textContent = "Edit";
+  btnEdit.textContent = "Edit";
 
-btnEdit.addEventListener("click", function () {
-  let tugasBaru = prompt("Edit tugas:", teksTugas);
-  let tanggalBaru = prompt("Edit tanggal:", tanggalTugas);
+  btnEdit.addEventListener("click", function () {
+  modalEdit.style.display = "flex";
 
-  if (tugasBaru !== null && tanggalBaru !== null) {
-    teksTugas = tugasBaru;
-    tanggalTugas = tanggalBaru;
+  editTugas.value = teksTugas;
+  editTanggal.value = tanggalTugas;
+
+  simpanEdit.onclick = function () {
+    teksTugas = editTugas.value;
+    tanggalTugas = editTanggal.value;
 
     spanbaru.innerHTML = `
       ${teksTugas} - ${tanggalTugas} -
@@ -71,7 +78,13 @@ btnEdit.addEventListener("click", function () {
         ${selesai ? "Done" : "On Progress"}
       </span>
     `;
-  }
+
+    modalEdit.style.display = "none";
+  };
+
+  batalEdit.onclick = function () {
+    modalEdit.style.display = "none";
+  };
 });
 
   let btnHapus = document.createElement("button");
@@ -85,7 +98,7 @@ btnHapus.addEventListener("click", function () {
   if (konfirmasi) {
     listbaru.remove();
   }
-  
+
   listbaru.remove();
   if (daftarTugas.children.length === 0) {
     kosong.style.display = "block";
