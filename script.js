@@ -53,8 +53,29 @@ btnTambah.addEventListener("click", function () {
     }
   });
 
+  let btnEdit = document.createElement("button");
+btnEdit.textContent = "Edit";
+
+btnEdit.addEventListener("click", function () {
+  let tugasBaru = prompt("Edit tugas:", teksTugas);
+  let tanggalBaru = prompt("Edit tanggal:", tanggalTugas);
+
+  if (tugasBaru !== null && tanggalBaru !== null) {
+    teksTugas = tugasBaru;
+    tanggalTugas = tanggalBaru;
+
+    spanbaru.innerHTML = `
+      ${teksTugas} - ${tanggalTugas} -
+      <span class="status">
+        ${selesai ? "Done" : "On Progress"}
+      </span>
+    `;
+  }
+});
+
   listbaru.appendChild(spanbaru);
   listbaru.appendChild(btnDone);
+  listbaru.appendChild(btnEdit);
 
   daftarTugas.appendChild(listbaru);
   spanbaru.style.color = "red";
