@@ -34,6 +34,7 @@ btnTambah.addEventListener("click", function () {
       modal.style.display = "none";
     };
 
+    return;
   }
 
   let listbaru = document.createElement("li");
