@@ -20,7 +20,7 @@ h1 {
   color: black;
 }
 
-h3 {
+h2 {
   text-align: center;
   color: black;
 }
@@ -95,4 +95,10 @@ ul {
 
 .done:hover {
   background:red;
+}
+
+#kosong {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 10px;
 }

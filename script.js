@@ -81,6 +81,9 @@ btnHapus.classList.add("hapus");
 
 btnHapus.addEventListener("click", function () {
   listbaru.remove();
+  if (daftarTugas.children.length === 0) {
+    kosong.style.display = "block";
+  }
 });
 
 let aksi = document.createElement("div");
