@@ -8,6 +8,18 @@ const editTugas = document.getElementById("editTugas");
 const editTanggal = document.getElementById("editTanggal");
 const simpanEdit = document.getElementById("simpanEdit");
 const batalEdit = document.getElementById("batalEdit");
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const modalOk = document.getElementById("modalOk");
+const modalCancel = document.getElementById("modalCancel");
+
+function bukaModal(judul, pesan) {
+  modal.style.display = "flex";
+
+  modalTitle.textContent = judul;
+  modalText.textContent = pesan;
+}
 
 btnTambah.addEventListener("click", function () {
   let teksTugas = inputTugas.value;
