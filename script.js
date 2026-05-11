@@ -80,6 +80,12 @@ btnHapus.textContent = "Hapus";
 btnHapus.classList.add("hapus");
 
 btnHapus.addEventListener("click", function () {
+  let konfirmasi = confirm("Yakin ingin menghapus tugas ini?");
+
+  if (konfirmasi) {
+    listbaru.remove();
+  }
+  
   listbaru.remove();
   if (daftarTugas.children.length === 0) {
     kosong.style.display = "block";
