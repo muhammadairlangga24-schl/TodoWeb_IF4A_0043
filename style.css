@@ -1,6 +1,28 @@
+body {
+  background: #8f9294;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 600px;
+  margin: 40px auto;
+  color: black;
+
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 h1 {
   text-align: center;
-  color: #4338ca;
+  color: black;
+}
+
+h3 {
+  text-align: center;
+  color: black;
 }
 
 .form {
