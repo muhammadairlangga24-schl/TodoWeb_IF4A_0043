@@ -27,8 +27,13 @@ btnTambah.addEventListener("click", function () {
   let statusTugas = "On Progress";
 
   if (teksTugas === "" || tanggalTugas === "") {
-    alert("Data harus dimasukkan!");
-    return;
+   bukaModal("Peringatan", "Data harus dimasukkan!");
+    modalCancel.style.display = "none";
+
+    modalOk.onclick = function () {
+      modal.style.display = "none";
+    };
+
   }
 
   let listbaru = document.createElement("li");
@@ -105,16 +110,23 @@ btnHapus.textContent = "Hapus";
 btnHapus.classList.add("hapus");
 
 btnHapus.addEventListener("click", function () {
-  let konfirmasi = confirm("Yakin ingin menghapus tugas ini?");
+  bukaModal("Konfirmasi", "Yakin ingin menghapus tugas ini?");
 
-  if (konfirmasi) {
-    listbaru.remove();
-  }
+modalCancel.style.display = "block";
 
+modalOk.onclick = function () {
   listbaru.remove();
-  if (daftarTugas.children.length === 0) {
-    kosong.style.display = "block";
-  }
+
+    if (daftarTugas.children.length === 0) {
+      kosong.style.display = "block";
+    }
+
+    modal.style.display = "none";
+  };
+
+  modalCancel.onclick = function () {
+    modal.style.display = "none";
+  };
 });
 
 let aksi = document.createElement("div");
