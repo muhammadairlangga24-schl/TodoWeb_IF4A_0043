@@ -27,7 +27,7 @@ btnTambah.addEventListener("click", function () {
   let statusTugas = "On Progress";
 
   if (teksTugas === "" || tanggalTugas === "") {
-   bukaModal("Peringatan", "Data harus dimasukkan!");
+    bukaModal("Peringatan", "Data harus dimasukkan!");
     modalCancel.style.display = "none";
 
     modalOk.onclick = function () {
@@ -81,61 +81,61 @@ btnTambah.addEventListener("click", function () {
   btnEdit.textContent = "Edit";
 
   btnEdit.addEventListener("click", function () {
-  modalEdit.style.display = "flex";
+    modalEdit.style.display = "flex";
 
-  editTugas.value = teksTugas;
-  editTanggal.value = tanggalTugas;
+    editTugas.value = teksTugas;
+    editTanggal.value = tanggalTugas;
 
-  simpanEdit.onclick = function () {
-    teksTugas = editTugas.value;
-    tanggalTugas = editTanggal.value;
+    simpanEdit.onclick = function () {
+      teksTugas = editTugas.value;
+      tanggalTugas = editTanggal.value;
 
-    spanbaru.innerHTML = `
+      spanbaru.innerHTML = `
       ${teksTugas} - ${tanggalTugas} -
       <span class="status">
         ${selesai ? "Done" : "On Progress"}
       </span>
     `;
 
-    modalEdit.style.display = "none";
-  };
+      modalEdit.style.display = "none";
+    };
 
-  batalEdit.onclick = function () {
-    modalEdit.style.display = "none";
-  };
-});
+    batalEdit.onclick = function () {
+      modalEdit.style.display = "none";
+    };
+  });
 
   let btnHapus = document.createElement("button");
-btnHapus.textContent = "Hapus";
+  btnHapus.textContent = "Hapus";
 
-btnHapus.classList.add("hapus");
+  btnHapus.classList.add("hapus");
 
-btnHapus.addEventListener("click", function () {
-  bukaModal("Konfirmasi", "Yakin ingin menghapus tugas ini?");
+  btnHapus.addEventListener("click", function () {
+    bukaModal("Konfirmasi", "Yakin ingin menghapus tugas ini?");
 
-modalCancel.style.display = "block";
+    modalCancel.style.display = "block";
 
-modalOk.onclick = function () {
-  listbaru.remove();
+    modalOk.onclick = function () {
+      listbaru.remove();
 
-    if (daftarTugas.children.length === 0) {
-      kosong.style.display = "block";
-    }
+      if (daftarTugas.children.length === 0) {
+        kosong.style.display = "block";
+      }
 
-    modal.style.display = "none";
-  };
+      modal.style.display = "none";
+    };
 
-  modalCancel.onclick = function () {
-    modal.style.display = "none";
-  };
-});
+    modalCancel.onclick = function () {
+      modal.style.display = "none";
+    };
+  });
 
-let aksi = document.createElement("div");
-aksi.classList.add("aksi");
+  let aksi = document.createElement("div");
+  aksi.classList.add("aksi");
 
-aksi.appendChild(btnDone);
-aksi.appendChild(btnEdit);
-aksi.appendChild(btnHapus);
+  aksi.appendChild(btnDone);
+  aksi.appendChild(btnEdit);
+  aksi.appendChild(btnHapus);
 
   listbaru.appendChild(spanbaru);
   listbaru.appendChild(aksi);
