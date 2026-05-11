@@ -6,6 +6,7 @@ const inputTanggal = document.getElementById("inputTanggal");
 btnTambah.addEventListener("click", function () {
   let teksTugas = inputTugas.value;
   let tanggalTugas = inputTanggal.value;
+  let statusTugas = "On Progress";
 
   if (teksTugas === "" || tanggalTugas === "") {
     alert("Data harus dimasukkan!");
@@ -16,7 +17,7 @@ btnTambah.addEventListener("click", function () {
   let spanbaru = document.createElement("span");
 
   spanbaru.innerHTML = `
-  ${teksTugas} - ${tanggalTugas} 
+  ${teksTugas} - ${tanggalTugas} - ${statusTugas}
   `;
 
   listbaru.appendChild(spanbaru);
