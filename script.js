@@ -2,6 +2,7 @@ const inputTugas = document.getElementById("inputTugas");
 const btnTambah = document.getElementById("btnTambah");
 const daftarTugas = document.getElementById("daftarTugas");
 const inputTanggal = document.getElementById("inputTanggal");
+const kosong = document.getElementById("kosong");
 
 btnTambah.addEventListener("click", function () {
   let teksTugas = inputTugas.value;
@@ -93,6 +94,7 @@ aksi.appendChild(btnHapus);
   listbaru.appendChild(aksi);
 
   daftarTugas.appendChild(listbaru);
+  kosong.style.display = "none";
   spanbaru.style.color = "red";
 
   inputTanggal.value = "";
