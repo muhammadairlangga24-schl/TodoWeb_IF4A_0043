@@ -5,15 +5,15 @@ const inputTanggal = document.getElementById("inputTanggal");
 
 btnTambah.addEventListener("click", function () {
   let teksTugas = inputTugas.value;
+  let tanggalTugas = inputTanggal.value;
 
-  if (teksTugas === "") {
+  if (teksTugas === "" || tanggalTugas === "") {
     alert("Data harus dimasukkan!");
     return;
   }
 
   let listbaru = document.createElement("li");
   let spanbaru = document.createElement("span");
-  let tanggalTugas = inputTanggal.value;
 
   spanbaru.innerHTML = `
   ${teksTugas} - ${tanggalTugas} 
@@ -33,4 +33,5 @@ btnTambah.addEventListener("click", function () {
   });
 
   inputTanggal.value = "";
+  inputTugas.value = "";
 });
