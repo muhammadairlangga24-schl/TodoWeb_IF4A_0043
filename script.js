@@ -89,8 +89,8 @@ aksi.appendChild(btnDone);
 aksi.appendChild(btnEdit);
 aksi.appendChild(btnHapus);
 
-listbaru.appendChild(spanbaru);
-listbaru.appendChild(aksi);
+  listbaru.appendChild(spanbaru);
+  listbaru.appendChild(aksi);
 
   daftarTugas.appendChild(listbaru);
   spanbaru.style.color = "red";

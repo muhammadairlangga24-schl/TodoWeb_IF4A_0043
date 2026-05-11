@@ -55,8 +55,25 @@ li {
   background: #f8fafc;
   padding: 10px;
   border-radius: 6px;
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+li span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+li span {
+  padding-left: 4px;
+}
+
+ul {
+  padding: 0;
 }
 
 .hapus {
@@ -70,4 +87,12 @@ li {
 .aksi {
   display: flex;
   gap: 8px;
+}
+
+.done {
+  background: green;
+}
+
+.done:hover {
+  background:red;
 }
