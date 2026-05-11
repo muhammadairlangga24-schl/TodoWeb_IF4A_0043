@@ -82,10 +82,15 @@ btnHapus.addEventListener("click", function () {
   listbaru.remove();
 });
 
-  listbaru.appendChild(spanbaru);
-  listbaru.appendChild(btnDone);
-  listbaru.appendChild(btnEdit);
-  listbaru.appendChild(btnHapus);
+let aksi = document.createElement("div");
+aksi.classList.add("aksi");
+
+aksi.appendChild(btnDone);
+aksi.appendChild(btnEdit);
+aksi.appendChild(btnHapus);
+
+listbaru.appendChild(spanbaru);
+listbaru.appendChild(aksi);
 
   daftarTugas.appendChild(listbaru);
   spanbaru.style.color = "red";
